@@ -261,6 +261,8 @@ create_other_categories(){
     cd knowledge-platform/scripts/definition-scripts
     sed -i "s#{{host}}#http://${private_ingressgateway_ip}/taxonomy#g" *
     sed -i "s#curl#curl -sS#g" *
+    bash -x master_category_create
+    rm master_category_create
     while read -r line; do printf "\n\n" >> /tmp/all_category_create.sh && cat $line >> /tmp/all_category_create.sh; done <<< $(ls)
     bash -x /tmp/all_category_create.sh
     rm /tmp/all_category_create.sh
