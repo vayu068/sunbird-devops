@@ -171,11 +171,12 @@ create_master_categories(){
     # Create the 5 master categories
     printf "\n\n"
     echo -e "\e[0;32m${bold}Creating master categories for board, medium, subject, gradeLevel, topic ${normal}"
-    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "board","code": "board"}}}'
-    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "medium","code": "medium"}}}'
-    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "subject","code": "subject"}}}'
-    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "gradeLevel","code": "gradeLevel"}}}'
-    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "topic","code": "topic"}}}'
+    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: sunbird" --data-raw '{"request": {"category": {"name": "board","code": "board","targetIdFieldName": "targetBoardIds","searchLabelFieldName": "se_boards","searchIdFieldName": "se_boardIds","orgIdFieldName": "boardIds"}}}'
+    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "medium","code": "medium","targetIdFieldName": "targetMediumIds","searchLabelFieldName": "se_mediums","searchIdFieldName": "se_mediumIds","orgIdFieldName": "mediumIds"}}}'
+    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "subject","code": "subject","targetIdFieldName": "targetSubjectIds","searchLabelFieldName": "se_subjects","searchIdFieldName": "se_subjectIds","orgIdFieldName": "subjectIds"}}}'
+    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "gradeLevel","code": "gradeLevel","targetIdFieldName": "targetGradeLevelIds","searchLabelFieldName": "se_gradeLevels","searchIdFieldName": "se_gradeLevelIds","orgIdFieldName": "gradeLevelIds"}}}'
+    curl -XPOST "http://${learningservice_ip}:8080/learning-service/framework/v3/category/master/create" -H 'Content-Type: application/json' -H "X-Channel-Id: ${organisation}" --data-raw '{"request": {"category": {"name": "topic","code": "topic","targetIdFieldName": "targetTopicIds","searchLabelFieldName": "se_topics","searchIdFieldName": "se_topicIds","orgIdFieldName": "topicsIds"}}}'
+
 }
 
 create_default_licenses(){
