@@ -682,7 +682,7 @@ create_organisation
 create_master_categories
 create_default_licenses
 create_default_channel_license
-create_other_categories
+#create_other_categories
 system_settings
 create_users
 assign_roles
