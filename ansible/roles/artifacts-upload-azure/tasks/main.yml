@@ -6,6 +6,6 @@
       - s3
       - cp
       - "{{ artifact_path }}"
-      - s3:// "{{ sunbird_artifact_storage_account_name }}" / "{{ artifacts_container }}" 
+      - "s3://{{ sunbird_artifact_storage_account_name }}/{{ artifacts_container }}" 
   async: 3600
   poll: 10
