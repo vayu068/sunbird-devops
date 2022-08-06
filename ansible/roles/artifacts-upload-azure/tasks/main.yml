@@ -1,5 +1,4 @@
 ---
-
 - name: Upload to AWS S3 Bucket
   amazon.aws.aws_s3:
     bucket: "{{ sunbird_artifact_storage_account_name }}"
