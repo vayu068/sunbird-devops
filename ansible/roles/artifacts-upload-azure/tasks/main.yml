@@ -4,7 +4,7 @@
   amazon.aws.aws_s3:
     bucket: {{ sunbird_artifact_storage_account_name }}
     object: {{ artifacts_container }}
-    src: { artifacts_container }} 
+    src: {{ artifacts_container }} 
     mode: put
 #   command: aws s3 cp {{ artifact_path }} s3://{{ artifacts_container }} 
 #   async: 3600
