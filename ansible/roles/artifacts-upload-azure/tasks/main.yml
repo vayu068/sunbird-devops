@@ -1,7 +1,7 @@
 ---
 - name: Upload to AWS S3 Bucket
-  amazon.aws.aws_s3:
-    bucket: sunbird-04082021
+  aws_s3:
+    bucket: sunbird-04082022
     object: /artifacts/
     src: "{{ artifact_path }}" 
     mode: put
