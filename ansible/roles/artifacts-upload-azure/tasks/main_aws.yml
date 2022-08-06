@@ -1,0 +1,8 @@
+---
+- name: Ensure AWS Bucket exists 
+  command: az storage container create --name {{ artifacts_container }}
+
+- name: Upload to AWS S3 Bucket
+  command: aws s3 cp {{ artifact_path }}/{{ artifact }} {{ artifacts_container }} 
+  async: 3600
+  poll: 10
