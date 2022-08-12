@@ -13,7 +13,7 @@
     - name: Installing other packages
       apt:
         state: present
-        name: ['python-pkg-resources', 'python3-pip', 'acl']
+        name: ['python3-pip', 'python-pkg-resources', 'acl']
       when: ansible_distribution_version | float > 18
   roles:
     - bootstrap_any
