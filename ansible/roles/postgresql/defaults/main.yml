@@ -38,7 +38,7 @@ postgresql_locales:
 
 # Databases to ensure exist.
 postgresql_databases: []
- - name: "{{ postgres.db_name }}" # required; the rest are optional
+ - name: "{{ postgres.db_name }}" 
 #   lc_collate: # defaults to 'en_US.UTF-8'
 #   lc_ctype: # defaults to 'en_US.UTF-8'
 #   encoding: # defaults to 'UTF-8'
@@ -53,7 +53,7 @@ postgresql_databases: []
 
 # Users to ensure exist.
 postgresql_users: []
- - name: "{{ postgres.db_username }}" #required; the rest are optional
+ - name: "{{ postgres.db_username }}" 
     password: "{{ postgres.db_password }}" # defaults to not set
 #   encrypted: # defaults to not set
 #   priv: # defaults to not set
