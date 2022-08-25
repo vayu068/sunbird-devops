@@ -14,7 +14,7 @@
 - name: run kong migrations for first run if tables are empty
   docker_container:
     name: kong_migrations
-    image: kong:1.0.0
+    image: kong
     command: kong migrations up --v
     detach: false
     cleanup: yes
