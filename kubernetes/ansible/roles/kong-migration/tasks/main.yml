@@ -1,7 +1,7 @@
 - name: check if tables are existing in kong postgres database
   docker_container:
     name: postgres
-    image: postgres:13
+    image: postgres:9
     command: 'psql -h {{ kong_postgres_host }} -U {{ kong_postgres_user }} -d {{ kong_postgres_database }} -p 5432 -c "\dt"'
     detach: false
     cleanup: yes
