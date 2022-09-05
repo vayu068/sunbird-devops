@@ -1,4 +1,7 @@
 ---
+module_defaults:
+    ansible.builtin.uri:
+      validate_certs: no
 # tasks file for post-install
 - name: Creating X-Auth-Token
   block:
