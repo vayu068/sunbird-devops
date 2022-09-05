@@ -1,13 +1,11 @@
 ---
-module_defaults:
-  ansible.builtin.uri:
-    validate_certs: no
 # tasks file for post-install
 - name: Creating X-Auth-Token
   block:
   - uri:
       url: "https://{{domain_name}}/auth/realms/sunbird/protocol/openid-connect/token"
       method: POST
+      validate_certs: no
       body_format: form-urlencoded
       body:
         - [ client_id,lms ]
@@ -24,6 +22,7 @@ module_defaults:
   - uri:
       url: "https://{{ domain_name }}/api/org/v1/create"
       method: POST
+      validate_certs: no
       headers:
         x-authenticated-user-token: "{{ keycloak_access_token }}"
         Authorization: "Bearer {{ core_vault_sunbird_api_auth_token }}"
